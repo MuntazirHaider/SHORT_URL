@@ -4,13 +4,14 @@ import { Clipboard } from "react-bootstrap-icons";
 import { ClipboardCheck } from "react-bootstrap-icons";
 import { GraphUpArrow } from 'react-bootstrap-icons';
 import { Trash3 } from 'react-bootstrap-icons';
+import { BoxArrowUpRight } from 'react-bootstrap-icons';
 import Analysis from "./Analysis";
 
 
 const Result = (props) => {
 
     const context = useContext(Urlcontext)
-    const { getAnalysis, history, deleteUrl } = context
+    const { getAnalysis, history, deleteUrl, redirectUrl } = context
     const [active, setactive] = useState(false);
     const [copy, setcopy] = useState(false)
 
@@ -35,7 +36,7 @@ const Result = (props) => {
         <>
             <div className="card text-center w-50 mx-auto my-5 pt-0" style={{ backgroundColor: "#d5e8dd" }}>
                 <div className="card-body">
-                    <h5 className="card-title fw-bolder" style={{ color: "#343a40" }}>{props.urls.shortId} <span style={{ cursor: "pointer" }} onClick={copyToClipboard}>{(copy) ? <ClipboardCheck /> : <Clipboard />}</span></h5>
+                    <h5 className="card-title fw-bolder" style={{ color: "#343a40" }}>{props.urls.shortId} <span style={{ cursor: "pointer" }} onClick={copyToClipboard}>{(copy) ? <ClipboardCheck style={{color : "green"}}/> : <Clipboard style={{color : "blue", marginRight: "0"}}/>}</span> <span style={{color : "green", cursor: "pointer"}} className="position-absolute top-0 end-0 me-2" onClick={()=>{redirectUrl(props.urls.shortId)}}><BoxArrowUpRight/></span></h5>
                     <p className="card-text" style={{ color: "#343a40" }}>
                         {props.urls.redirectURL}
                     </p>

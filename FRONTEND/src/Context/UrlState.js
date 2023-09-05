@@ -72,12 +72,18 @@ const UrlState = (props) => {
     }, 3000);
   }
 
-
+  const redirectUrl = async (id) => {
+    const response = await fetch(`http://localhost:5000/${id}`, {
+      method: 'GET'
+    });
+  
+    window.open(response.url, '_blank')
+  }
 
 
 
   return (
-    <urlContext.Provider value={{ urls, seturl, genurl, geturl, history, getAnalysis, deleteUrl, deleteMsg }}>
+    <urlContext.Provider value={{ urls, seturl, genurl, geturl, history, getAnalysis, deleteUrl, deleteMsg, redirectUrl }}>
       {props.children}
     </urlContext.Provider>
   )

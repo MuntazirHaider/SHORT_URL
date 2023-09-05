@@ -45,7 +45,7 @@ const Body = () => {
             {deleteMsg === true ? <Delete title={"Done!"} desc={"Your ShortId is Deleted Successfully"} /> : ""}
             <div className="text-center">
                 <h1 className="fs-1 my-5 fw-bold" style={{ color: "#343a40" }}>URL Shortner</h1>
-                <div className="input-group mb-3 input-group-lg w-50 p-3 position-absolute start-50 translate-middle my-5" style={{ zIndex: 99999 }}>
+                <div className="input-group mb-3 input-group-lg w-50 p-3 position-absolute start-50 translate-middle my-5">
                     <input
                         type="text"
                         className="form-control"

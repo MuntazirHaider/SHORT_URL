@@ -72,7 +72,7 @@ export const Analysis = (props) => {
             <div className="modal-body">
               {props.history.analytics === undefined ? "" : <ol>
                 {props.history.analytics.map((item) => (
-                  <li key={item.id}>{item.timestamp}</li>
+                  <li key={item.timestamp}>{item.timestamp}</li>
                 ))}
               </ol>}
             </div>
